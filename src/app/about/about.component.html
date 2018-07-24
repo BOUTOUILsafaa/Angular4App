@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label class="col-form-label">Message: </label>
                     <input type="text" [(ngModel)]="commentaires.message">
-                    <button class="btn btn-info" (click)="onAddCommentaire()">Ajouter commentaire</button>
+                    <button [disabled]="!commentaires.message" class="btn btn-info" (click)="onAddCommentaire()">Ajouter commentaire</button>
                 </div>
             </div>
             <div>
