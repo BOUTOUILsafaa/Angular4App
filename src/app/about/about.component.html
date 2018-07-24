@@ -1,7 +1,7 @@
 <br><br>
 <div class="container">
-    <div class="card border-primary">
-        <div class="card-header bg-primary text-white">About</div>
+    <div class="card border-info">
+        <div class="card-header bg-info text-white">About</div>
         <div class="card-body">
             <div>
                 <h3>Infos: </h3>
@@ -14,7 +14,8 @@
             <div>
                 <h3>Commentaires:</h3>
                 <ul class="list-group">
-                    <li class="list-group-item" *ngFor="let c of comments">{{ c.message }} at {{ c.date|date:'dd/MM/yyyy:HH:mm:ss' }}</li>
+                    <li class="list-group-item" *ngFor="let c of comments">{{ c.message }} at
+                        <span class="float-right badge-pill badge-info">{{ c.date|date:'dd/MM/yyyy:HH:mm:ss' }}</span></li>
                 </ul>
             </div>
         </div>
