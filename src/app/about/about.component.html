@@ -1,12 +1,24 @@
-<div>
-  <ul>
-    <li>Nom: <strong>{{ info.nom }}</strong></li>
-    <li>Email: <strong>{{ info.email }}</strong></li>
-  </ul>
+<br><br>
+<div class="container">
+    <div class="card border-primary">
+        <div class="card-header bg-primary text-white">About</div>
+        <div class="card-body">
+            <div>
+                <h3>Infos: </h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Nom: <strong>{{ info.nom }}</strong></li>
+                    <li class="list-group-item">Email: <strong>{{ info.email }}</strong></li>
+                </ul>
+            </div>
+            <br><br>
+            <div>
+                <h3>Commentaires:</h3>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let c of comments">{{ c.message }} at {{ c.date|date:'dd/MM/yyyy:HH:mm:ss' }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div>
-  <ul>
-    <li *ngFor="let c of comments">{{ c.message }} at {{ c.date|date:'dd/MM/yyyy:HH:mm:ss' }}</li>
-  </ul>
-</div>
+
