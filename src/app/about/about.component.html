@@ -12,6 +12,13 @@
             </div>
             <br><br>
             <div>
+                <div class="form-group">
+                    <label class="col-form-label">Message: </label>
+                    <input type="text" [(ngModel)]="commentaires.message">
+                    <button class="btn btn-info" (click)="onAddCommentaire()">Ajouter commentaire</button>
+                </div>
+            </div>
+            <div>
                 <h3>Commentaires:</h3>
                 <ul class="list-group">
                     <li class="list-group-item" *ngFor="let c of comments">{{ c.message }} at
