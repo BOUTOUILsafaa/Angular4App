@@ -20,10 +20,10 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
   }
-  onAddCommentaire(){
+  onAddCommentaire(c){
+      console.log(c);
       this.commentaires.date = new Date();
-      this.comments.push(this.commentaires);
-      this.commentaires = { date: new Date(), message: ''};
+      this.comments.push(c);
   }
 
 }
