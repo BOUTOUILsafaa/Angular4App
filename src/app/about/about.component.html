@@ -1,3 +1,12 @@
-<p>
-  about works!
-</p>
+<div>
+  <ul>
+    <li>Nom: <strong>{{ info.nom }}</strong></li>
+    <li>Email: <strong>{{ info.email }}</strong></li>
+  </ul>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let c of comments">{{ c.message }} at {{ c.date|date:'dd/MM/yyyy:HH:mm:ss' }}</li>
+  </ul>
+</div>
