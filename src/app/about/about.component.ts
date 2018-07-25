@@ -22,8 +22,9 @@ export class AboutComponent implements OnInit {
   }
   onAddCommentaire(c){
       console.log(c);
-      this.commentaires.date = new Date();
+      c.date = new Date();
       this.comments.push(c);
+      this.commentaires.message = '';
   }
 
 }

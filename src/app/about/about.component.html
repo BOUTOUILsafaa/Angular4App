@@ -15,10 +15,12 @@
                 <form #f="ngForm" (ngSubmit)="onAddCommentaire(f.value)" >
                     <div class="form-group">
                         <label class="col-form-label">Message: </label>
-                        <input name="message" ngModel type="text" >
-                        <button class="btn btn-info" type="submit">Ajouter commentaire</button>
+                        <input required name="message" ngModel type="text"
+                        [(ngModel)]="commentaires.message">
+                        <button [disabled]="!f.valid" class="btn btn-info" type="submit">Ajouter commentaire</button>
                     </div>
                 </form>
+
 
             </div>
             <div>
