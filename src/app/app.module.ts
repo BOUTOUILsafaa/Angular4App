@@ -7,6 +7,7 @@ import { ContactComponent } from './contact/contact.component';
 import {FormsModule} from '@angular/forms';
 import {AboutService} from '../services/about.service';
 import {RouterModule, Routes} from '@angular/router';
+import { GalleryComponent } from './gallery/gallery.component';
 const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'contacts', component: ContactComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
