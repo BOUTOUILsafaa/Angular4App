@@ -6,7 +6,12 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import {FormsModule} from '@angular/forms';
 import {AboutService} from '../services/about.service';
-
+import {RouterModule, Routes} from '@angular/router';
+const routes: Routes = [
+    {path: 'about', component: AboutComponent},
+    {path: 'contacts', component: ContactComponent},
+    {path: '', redirectTo: '/about', pathMatch: 'full'}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +20,8 @@ import {AboutService} from '../services/about.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
       AboutService
