@@ -11,6 +11,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'contacts', component: ContactComponent},
+    {path: 'gallery', component: GalleryComponent},
     {path: '', redirectTo: '/about', pathMatch: 'full'}
 ];
 @NgModule({
