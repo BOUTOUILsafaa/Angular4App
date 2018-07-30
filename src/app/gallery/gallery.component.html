@@ -10,4 +10,16 @@
       </div>
     </form>
   </div>
+  <div *ngIf="pagePhotos">
+  <div *ngFor="let im of pagePhotos.hits">
+    <div class="card border-info">
+      <div class="card-header bg-info text-white">
+        {{ im.tags }}
+      </div>
+      <div class="card-body">
+        <img src="{{ im.previewURL }}" alt="">
+      </div>
+    </div>
+  </div>
+  </div>
 </div>

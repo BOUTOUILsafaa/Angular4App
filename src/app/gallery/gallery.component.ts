@@ -8,7 +8,7 @@ import {map} from 'rxjs/internal/operators';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-  pagePhotos: any;
+  pagePhotos: {};
   constructor( private http: HttpClient) { }
 
   ngOnInit() {
