@@ -6,19 +6,21 @@
       <div class="form-group">
         <label>Mot cle: </label>
         <input type="text" name="motCle" ngModel required>
-        <button type="submit" class="btn-primary btn">Chercher</button>
+        <button [disabled]="!f.valid" type="submit" class="btn-primary btn">Chercher</button>
       </div>
     </form>
   </div>
-
-  <div *ngFor="let im of pagePhotos?.hits">
-    <div class="card border-info">
+<div class="row">
+  <div *ngFor="let im of pagePhotos?.hits" class="col-md-3">
+    <div class="card border-info img-card">
       <div class="card-header bg-info text-white">
-        {{ im.tags }}
+        By: {{ im.user }}
       </div>
       <div class="card-body">
         <img src="{{ im.previewURL }}" alt="">
       </div>
     </div>
   </div>
+</div>
+
 </div>
