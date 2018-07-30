@@ -1,3 +1,13 @@
-<p>
-  gallery works!
-</p>
+<br>
+<div class="card border-info">
+  <div class="card-header bg-info text-white">Gallery</div>
+  <div class="card-body">
+    <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+      <div class="form-group">
+        <label>Mot cle: </label>
+        <input type="text" name="motCle" ngModel required>
+        <button type="submit" class="btn-primary btn">Chercher</button>
+      </div>
+    </form>
+  </div>
+</div>

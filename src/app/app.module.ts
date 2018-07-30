@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {AboutService} from '../services/about.service';
 import {RouterModule, Routes} from '@angular/router';
 import { GalleryComponent } from './gallery/gallery.component';
+import {HttpClientModule} from '@angular/common/http';
 const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'contacts', component: ContactComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [
       AboutService
