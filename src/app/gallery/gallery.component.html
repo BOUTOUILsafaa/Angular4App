@@ -10,8 +10,8 @@
       </div>
     </form>
   </div>
-  <div *ngIf="pagePhotos">
-  <div *ngFor="let im of pagePhotos.hits">
+
+  <div *ngFor="let im of pagePhotos?.hits">
     <div class="card border-info">
       <div class="card-header bg-info text-white">
         {{ im.tags }}
@@ -20,6 +20,5 @@
         <img src="{{ im.previewURL }}" alt="">
       </div>
     </div>
-  </div>
   </div>
 </div>
