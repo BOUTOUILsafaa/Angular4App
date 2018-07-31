@@ -5,7 +5,7 @@
     <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
       <div class="form-group">
         <label>Mot cle: </label>
-        <input type="text" name="motCle" ngModel required>
+        <input type="text" name="motCle" ngModel [(ngModel)]="motCle" required>
         <button [disabled]="!f.valid" type="submit" class="btn-primary btn">Chercher</button>
       </div>
     </form>
@@ -22,5 +22,12 @@
     </div>
   </div>
 </div>
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li *ngFor="let p of pages let i=index" class="clickable nav-item">
+        <a (click)="goToPage(i+1)" class="nav-link"> {{ i + 1 }}</a>
+      </li>
+    </ul>
+  </div>
 
 </div>
