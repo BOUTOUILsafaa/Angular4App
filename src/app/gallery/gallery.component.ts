@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/internal/operators';
+import {GalleryService} from '../../services/gallery.service';
 
 @Component({
   selector: 'app-gallery',
@@ -14,20 +15,20 @@ export class GalleryComponent implements OnInit {
   size = 4;
   totalPages: number;
   pages: Array<number> = [];
-  constructor( private http: HttpClient) { }
+  constructor( private galleryService: GalleryService) { }
 
   ngOnInit() {
   }
   onSearch(dataForm) {
-    console.log(dataForm);
-    this.http.get('https://pixabay.com/api/?key=9682692-25f8b75ca0f48c427241f45af&q=' + dataForm.motCle + '&per_page=' + this.size + '&page=' + this.currentPage)
-        .pipe(map((response: any) => response))
-        .subscribe(data => {console.log(data);
+         this.galleryService.search(dataForm.motCle, this.size, this.currentPage)
+             .subscribe(data => {console.log(data);
           this.pagePhotos = data;
           this.totalPages = data.totalHits / this.size;
           if (data.totalHits % this.size != 0) { ++this.totalPages; }
           this.pages = new Array(this.totalPages);
-        });
+        }, err => {
+                console.log(err);
+             });
   }
   goToPage(i) {
       this.currentPage = i;

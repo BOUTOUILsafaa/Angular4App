@@ -9,6 +9,7 @@ import {AboutService} from '../services/about.service';
 import {RouterModule, Routes} from '@angular/router';
 import { GalleryComponent } from './gallery/gallery.component';
 import {HttpClientModule} from '@angular/common/http';
+import {GalleryService} from '../services/gallery.service';
 const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'contacts', component: ContactComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
     HttpClientModule,
   ],
   providers: [
-      AboutService
+      AboutService,
+      GalleryService,
   ],
   bootstrap: [AppComponent]
 })
