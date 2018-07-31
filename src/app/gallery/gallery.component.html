@@ -22,12 +22,14 @@
     </div>
   </div>
 </div>
+  <div class="container">
   <div class="row">
     <ul class="nav nav-pills">
       <li *ngFor="let p of pages let i=index" class="clickable nav-item">
-        <a (click)="goToPage(i+1)" class="nav-link"> {{ i + 1 }}</a>
+        <a [ngClass]="{'active': currentPage == i+1}" (click)="goToPage(i+1)" class="nav-link"> {{ i + 1 }}</a>
       </li>
     </ul>
+  </div>
   </div>
 
 </div>

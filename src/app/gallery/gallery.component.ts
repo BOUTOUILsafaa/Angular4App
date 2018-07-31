@@ -25,7 +25,7 @@ export class GalleryComponent implements OnInit {
         .subscribe(data => {console.log(data);
           this.pagePhotos = data;
           this.totalPages = data.totalHits / this.size;
-          if (data.totalHits % this.size !=0) { ++this.totalPages; }
+          if (data.totalHits % this.size != 0) { ++this.totalPages; }
           this.pages = new Array(this.totalPages);
         });
   }
