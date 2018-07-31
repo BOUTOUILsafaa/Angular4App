@@ -10,16 +10,18 @@
       </div>
     </form>
   </div>
-<div class="row">
-  <div *ngFor="let im of pagePhotos?.hits" class="col-md-3">
-    <div class="card border-info img-card">
-      <div class="card-header bg-info text-white">
-        By: {{ im.user }}
+  <div *ngIf="pagePhotos">
+    <div class="row">
+      <div *ngFor="let im of pagePhotos.hits" class="col-md-3">
+        <div class="card border-info img-card">
+          <div class="card-header bg-info text-white">
+            By: {{ im.user }}
+          </div>
+          <div class="card-body">
+            <img src="{{ im.previewURL }}" alt="">
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <img src="{{ im.previewURL }}" alt="">
-      </div>
-    </div>
   </div>
 </div>
   <div class="container">
